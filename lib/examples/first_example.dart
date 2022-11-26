@@ -10,7 +10,7 @@ class FirstExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('GlobalKey 1st example'),
+        title: Text('GlobalKey the 1st example'),
         centerTitle: true,
         backgroundColor: Colors.indigo[300],
       ),

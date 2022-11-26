@@ -19,3 +19,4 @@ class Utils {
       ..showSnackBar(snackBar);
   }
 }
+
