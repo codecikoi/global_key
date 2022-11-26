@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:global_key/examples/second_example.dart';
 
 import 'examples/first_example.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FirstExample(),
+      home: SecondExample(),
     );
   }
 }

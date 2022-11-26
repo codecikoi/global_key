@@ -10,6 +10,8 @@ class SecondExample extends StatefulWidget {
 }
 
 class _SecondExampleState extends State<SecondExample> {
+  final formKey = GlobalKey<FormState>();
+
   bool isSignedIn = false;
   String email = '';
   String password = '';
@@ -17,6 +19,7 @@ class _SecondExampleState extends State<SecondExample> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.grey[500],
           title: Text('GlobalKey the 2nd example'),
           centerTitle: true,
         ),
@@ -24,7 +27,7 @@ class _SecondExampleState extends State<SecondExample> {
       );
 
   Widget buildLogin() => Form(
-        key: null,
+        key: formKey,
         child: ListView(
           padding: EdgeInsets.all(24.0),
           children: [
@@ -68,10 +71,17 @@ class _SecondExampleState extends State<SecondExample> {
         ),
       );
 
-  void submit() {}
+  void submit() {
+    final form = formKey.currentState!;
+    if (form.validate()) {
+      form.save();
+      print('form valid $email');
+      setState(() => isSignedIn = true);
+    }
+  }
 
   Widget buildHome() => Container(
-        padding: EdgeInsets.all(24.0),
+        padding: EdgeInsets.all(10.0),
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
